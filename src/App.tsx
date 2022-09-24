@@ -1,6 +1,9 @@
 import React from 'react';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Test } from './components/Test';
+import { GameView } from './views/GameView';
+import { MenuView } from './views/MenuView';
+import { QuestionView } from './views/QuestionView';
 
 export const App = () => {
   return (
