@@ -1,11 +1,14 @@
 import React from 'react';
+import { Routes } from 'react-router-dom';
 import { Test } from './components/Test';
 
 export const App = () => {
   return (
-    <div className="App">
-      <Test />
-    </div>
+    <Routes>
+      <Route path="/" element={<MenuView />} />
+      <Route path="/game" element={<GameView />} />
+      <Route path="/question" element={<QuestionView />} />
+    </Routes>
   );
 }
 
