@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { GameView } from './views/GameView';
 import { MenuView } from './views/MenuView';
 import { QuestionFormView } from './views/QuestionFormView';
+import { QuestionsListView } from './views/QuestionsListView';
 import { QuestionView } from './views/QuestionView';
 
 export const App = () => {
@@ -12,6 +13,7 @@ export const App = () => {
       <Route path="/game" element={<GameView />} />
       <Route path="/question" element={<QuestionView />} />
       <Route path="/question/form" element={<QuestionFormView />} />
+      <Route path="/question/list" element={<QuestionsListView />} />
     </Routes>
   );
 }
