@@ -9,6 +9,8 @@ export interface Question {
     difficultyLevel: DifficultyLevel;
 }
 
+export type QuestionToAdd = Omit<Question, 'id'>;
+
 export enum DifficultyLevel {
     EASY = 'EASY',
     MEDIUM = 'MEDIUM',

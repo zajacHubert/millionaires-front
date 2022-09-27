@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useFetchQuestionsQuery } from '../../features/api-questions-slice';
+import { useAddQuestionMutation, useFetchQuestionsQuery } from '../../features/api-questions-slice';
 import { DifficultyLevel } from '../../types/question';
 
 type Inputs = {
@@ -15,7 +15,7 @@ type Inputs = {
 
 export const QuestionForm = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>({
         defaultValues: {
             txt: '',
             ansA: '',
@@ -26,9 +26,12 @@ export const QuestionForm = () => {
             difficultyLevel: DifficultyLevel.EASY,
         }
     });
+    const [addQuestion] = useAddQuestionMutation();
 
-    const handleFormSubmit: SubmitHandler<Inputs> = (data) => {
+    const handleFormSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(data);
+        await addQuestion(data);
+        reset();
     }
 
     console.log(errors);

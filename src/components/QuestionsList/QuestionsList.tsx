@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFetchQuestionsQuery } from '../../features/api-questions-slice';
+import { drawQuestions } from '../../utils/drawQuestions';
 
 export const QuestionsList = () => {
     const { data } = useFetchQuestionsQuery();
@@ -7,7 +8,10 @@ export const QuestionsList = () => {
         a.difficultyLevel.localeCompare(b.difficultyLevel)
     ))
 
-    console.log(sorted);
+    if (sorted) {
+        const drawed = drawQuestions(sorted);
+        console.log(drawed);
+    }
 
     return (
         <>
