@@ -8,10 +8,7 @@ export const QuestionsList = () => {
         a.difficultyLevel.localeCompare(b.difficultyLevel)
     ))
 
-    if (sorted) {
-        const drawed = drawQuestions(sorted);
-        console.log(drawed);
-    }
+
 
     return (
         <>

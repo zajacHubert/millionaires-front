@@ -1,5 +1,7 @@
 import React from "react";
+import { SingleQuestion } from "../components/SingleQuestion/SingleQuestion";
 
 export const GameView = () => {
-    return null;
+
+    return <SingleQuestion />;
 }

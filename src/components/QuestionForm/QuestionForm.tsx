@@ -46,7 +46,7 @@ export const QuestionForm = () => {
                         message: 'Minimalna długość to 5 znaków',
                     },
                     maxLength: {
-                        value: 200,
+                        value: 300,
                         message: 'Maksymalna długość to 200 znaków'
                     }
                 })} />
