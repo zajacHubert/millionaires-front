@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Question } from '../../types/question';
 import { getAllQuestions } from '../../utils/axios-functions';
 import { drawQuestions } from '../../utils/drawQuestions';
 import { winnings } from '../../utils/winnings';
 import { Modal } from '../Modal/Modal';
+import styles from './SingleQuestion.module.scss';
 
 export const SingleQuestion = () => {
     const [drawed, setDrawed] = useState<Question[] | null>(null);
@@ -19,17 +20,13 @@ export const SingleQuestion = () => {
             const drawedQuestions = drawQuestions(res.data);
             setDrawed(drawedQuestions);
         })()
-
-    }, [])
+    }, []);
 
     if (!drawed) {
-        return null;
+        return <p>Loading</p>
     }
 
     console.log(drawed);
-
-
-
 
     const checkAnswer = (answer: string) => {
         if (drawed[questionIndex].correctAns === answer) {
@@ -50,6 +47,11 @@ export const SingleQuestion = () => {
         }
     }
 
+    const resignation = () => {
+        setMessage(`Kończysz grę z wygraną ${winnings[questionIndex - 1]} zł`);
+        setShow(true);
+    }
+
     return (
         <>
             {
@@ -64,17 +66,19 @@ export const SingleQuestion = () => {
                 />
             }
             {redirect && <Navigate to="/" replace />}
-            <div>
-                <div>
-                    <h3>{drawed[questionIndex].txt}</h3>
-                    <button onClick={() => checkAnswer(drawed[questionIndex].ansA)}>A: {drawed[questionIndex].ansA}</button>
-                    <button onClick={() => checkAnswer(drawed[questionIndex].ansB)}>B: {drawed[questionIndex].ansB}</button>
-                    <button onClick={() => checkAnswer(drawed[questionIndex].ansC)}>C: {drawed[questionIndex].ansC}</button>
-                    <button onClick={() => checkAnswer(drawed[questionIndex].ansD)}>D: {drawed[questionIndex].ansD}</button>
+            <div className={styles.container}>
+                <div className={styles.questions}>
+                    <h3 className={styles.question}>{drawed[questionIndex].txt}</h3>
+                    <div className={styles.answers}>
+                        <button onClick={() => checkAnswer(drawed[questionIndex].ansA)} className={styles.answer}>A: {drawed[questionIndex].ansA}</button>
+                        <button onClick={() => checkAnswer(drawed[questionIndex].ansB)} className={styles.answer}>B: {drawed[questionIndex].ansB}</button>
+                        <button onClick={() => checkAnswer(drawed[questionIndex].ansC)} className={styles.answer}>C: {drawed[questionIndex].ansC}</button>
+                        <button onClick={() => checkAnswer(drawed[questionIndex].ansD)} className={styles.answer}>D: {drawed[questionIndex].ansD}</button>
+                    </div>
                 </div>
-                <div>
+                <div className={styles.options}>
                     <div>
-                        <button>Rezygnuję</button>
+                        <button onClick={resignation}>Rezygnuję</button>
                         <button>koło1</button><button>koło2</button><button>koło3</button>
                     </div>
                     <div>

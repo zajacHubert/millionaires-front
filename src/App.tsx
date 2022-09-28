@@ -8,13 +8,15 @@ import { QuestionView } from './views/QuestionView';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<MenuView />} />
-      <Route path="/game" element={<GameView />} />
-      <Route path="/question" element={<QuestionView />} />
-      <Route path="/question/form" element={<QuestionFormView />} />
-      <Route path="/question/list" element={<QuestionsListView />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<MenuView />} />
+        <Route path="/game" element={<GameView />} />
+        <Route path="/question" element={<QuestionView />} />
+        <Route path="/question/form" element={<QuestionFormView />} />
+        <Route path="/question/list" element={<QuestionsListView />} />
+      </Routes>
+    </>
   );
 }
 

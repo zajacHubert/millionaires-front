@@ -1,14 +1,11 @@
 import React from 'react';
 import { useFetchQuestionsQuery } from '../../features/api-questions-slice';
-import { drawQuestions } from '../../utils/drawQuestions';
 
 export const QuestionsList = () => {
-    const { data } = useFetchQuestionsQuery();
+    const { data } = useFetchQuestionsQuery(undefined, { refetchOnMountOrArgChange: true });
     const sorted = data?.slice().sort((a, b) => (
         a.difficultyLevel.localeCompare(b.difficultyLevel)
-    ))
-
-
+    ));
 
     return (
         <>
@@ -43,7 +40,6 @@ export const QuestionsList = () => {
                     ))}
                 </tbody>
             </table>
-
         </>
     )
 }

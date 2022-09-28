@@ -1,0 +1,58 @@
+.container {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    min-height: 80vh;
+}
+
+.questions {
+    width: 75%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)),
+        url('../../assets/logo\ big.webp');
+    background-position: center;
+    margin: 0 auto;
+}
+
+.question {
+    color: white;
+    background-color: #304ffe;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.answers {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+}
+
+.answer {
+    text-align: left;
+    width: 100%;
+    background-color: #304ffe;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+
+.options {
+    width: 25%;
+    background-color: #304ffe;
+}

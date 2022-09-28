@@ -24,3 +24,4 @@ export const deleteQuestion = async (id: string) => {
 export const editQuestion = async (id: string, question: Partial<Question>) => {
     await axios.patch(`${baseUrl}/${id}`, question);
 }
+
