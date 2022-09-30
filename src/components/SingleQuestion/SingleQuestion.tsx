@@ -1,4 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs';
+import { AiFillPhone } from 'react-icons/ai';
+import { } from 'react-icons/bs';
 import { Navigate } from 'react-router-dom';
 import { Question } from '../../types/question';
 import { getAllQuestions } from '../../utils/axios-functions';
@@ -35,15 +38,23 @@ export const SingleQuestion = () => {
                 setShow(true);
                 setQuestionIndex(prev => prev + 1)
             } else {
-                setMessage('Gratulacje! Opowiedziałeś poprawnie na wszytskie pytania i wygrałeś nagrodę główną 1000000');
+                setMessage('Gratulacje! Opowiedziałeś poprawnie na wszystkie pytania i wygrałeś nagrodę główną 1000000!');
+                setShow(true);
             }
         } else {
-            setMessage(questionIndex === 0
-                ?
-                'Niestety niepoprawna odpowiedź, nie udało się nic wygrać'
-                :
-                `Niestety niepoprawna odpowiedź, Twoja wygrana to ${winnings[questionIndex - 1]} zł`);
-            setShow(true);
+
+            if (questionIndex < 1) {
+                setMessage('Niestety niepoprawna odpowiedź, nie udało się nic wygrać');
+                setShow(true);
+            }
+            else if (questionIndex < 7) {
+                setMessage('Niestety niepoprawna odpowiedź, wygrywasz sumę gwarantowaną 1000zł');
+                setShow(true);
+            }
+            else if (questionIndex < 11) {
+                setMessage('Niestety niepoprawna odpowiedź, wygrywasz sumę gwarantowaną 40000zł');
+                setShow(true);
+            }
         }
     }
 
@@ -78,13 +89,19 @@ export const SingleQuestion = () => {
                 </div>
                 <div className={styles.options}>
                     <div>
-                        <button onClick={resignation}>Rezygnuję</button>
-                        <button>koło1</button><button>koło2</button><button>koło3</button>
+                        <button onClick={resignation} className={styles.resignation}>Rezygnuję</button>
+                        <div className={styles.helpers}>
+                            <BsFillPeopleFill className={styles.crowd} />
+
+                            <button className={styles.half}>50:50</button>
+                            <AiFillPhone className={styles.phone} />
+                        </div>
+
                     </div>
-                    <div>
-                        <ul>
+                    <div className={styles.winnings}>
+                        <ul >
                             {[...winnings].reverse().map((el, i) => (
-                                <li key={i}>{winnings.length - i} {el}</li>
+                                <li key={i} style={{ color: `${questionIndex === winnings.length - 1 - i ? '#f68301' : ''}` }}> <span className={styles.index}>{winnings.length - i}</span>  <span className={styles.amount}>{el}</span> </li>
                             ))}
                         </ul>
 

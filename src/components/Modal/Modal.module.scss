@@ -15,9 +15,10 @@
     font-size: 1.6rem;
     width: 50%;
     min-height: 30vh;
-    background-color: #444;
+    background-color: #111224;
     color: white;
     text-align: center;
+    border: 2px solid white;
 }
 
 .dialog__title {
@@ -47,7 +48,7 @@
     font-weight: bold;
     border-radius: 6px;
     font-size: 1.3rem;
-    background-color: #1769aa;
+    background-color: #304ffe;
     color: #ababab;
     transition: .4s;
     min-width: 25%;
@@ -72,3 +73,4 @@
         font-size: 1rem;
     }
 }
+

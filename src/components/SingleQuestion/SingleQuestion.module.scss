@@ -3,6 +3,8 @@
     margin: 1rem auto;
     display: flex;
     min-height: 80vh;
+    border-radius: 10px;
+
 }
 
 .questions {
@@ -12,16 +14,18 @@
     flex-direction: column;
     justify-content: space-around;
     background:
-        /* top, transparent black, faked with gradient */
         linear-gradient(rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)),
         url('../../assets/logo\ big.webp');
     background-position: center;
     margin: 0 auto;
+    color: #bcbcbc;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
 }
 
 .question {
-    color: white;
     background-color: #304ffe;
     width: 80%;
     margin: 0 auto;
@@ -45,14 +49,141 @@
     text-align: left;
     width: 100%;
     background-color: #304ffe;
-    color: white;
     padding: 1rem;
     border-radius: 10px;
     border: 2px solid black;
-}
+    color: #bcbcbc;
+    transition: 0.4s;
 
+    &:hover {
+        color: white;
+        background-color: #42a5f5;
+        cursor: pointer;
+    }
+}
 
 .options {
     width: 25%;
     background-color: #304ffe;
+    text-align: center;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background:
+        linear-gradient(rgb(24, 30, 57),
+            rgb(24, 30, 57)),
+}
+
+.resignation {
+    width: 50%;
+    margin: 2rem 0;
+    background-color: gray;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.4s;
+    padding: 0.2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: #efefef;
+        border-color: white;
+    }
+
+}
+
+.half {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: gray;
+    margin: 1rem;
+    padding: 0.3rem;
+    font-weight: bold;
+    transition: 0.4s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: #efefef;
+        border-color: white;
+    }
+
+}
+
+.phone {
+    font-size: 2.5rem;
+    border-radius: 10px;
+    background-color: gray;
+    padding: 0.4rem;
+    border: 2px solid black;
+    width: 4.5rem;
+    transition: 0.4s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: #efefef;
+        border-color: white;
+    }
+}
+
+.crowd {
+    background-color: gray;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    padding: .1rem;
+    width: 4.5rem;
+    border: 2px solid black;
+    transition: 0.4s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: #efefef;
+        border-color: white;
+    }
+}
+
+.helpers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winnings {
+    text-align: left;
+    margin: 2rem;
+    color: gray;
+    font-weight: bold;
+
+    ul {
+        list-style: none;
+
+
+
+        li {
+            margin: 0.5rem;
+
+            &:nth-child(11),
+            &:nth-child(6) {
+                color: rgb(220, 208, 208);
+            }
+        }
+    }
+
+}
+
+
+.amount {
+    margin-left: 0.7rem;
+}
+
+.index {
+    display: inline-block;
+    width: 0.5rem;
+    margin-right: 1rem;
+}
+
+.active {
+    color: #f68301;
 }

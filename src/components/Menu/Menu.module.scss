@@ -1,0 +1,39 @@
+.container {
+    width: 90%;
+    margin: 1rem auto;
+    min-height: 80vh;
+    background:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)),
+        url('../../assets/logo\ big.webp');
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+
+.btn {
+    width: 40%;
+    background-color: #304ffe;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    color: #bcbcbc;
+    transition: 0.4s;
+    margin: 5rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
+
+    &:hover {
+        color: white;
+        background-color: #42a5f5;
+        cursor: pointer;
+    }
+}
