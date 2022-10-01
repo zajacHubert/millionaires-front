@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Question, QuestionToAdd } from "../types/question";
 
-
-
 const baseUrlForApp = 'http://localhost:3001';
 
 export const apiSlice = createApi({
@@ -17,6 +15,7 @@ export const apiSlice = createApi({
                 query: () => '/questions',
                 providesTags: ['Question'],
             }),
+
             addQuestion: builder.mutation<{}, QuestionToAdd>({
                 query: (place) => ({
                     url: '/questions',
