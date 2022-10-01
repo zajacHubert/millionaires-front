@@ -187,3 +187,8 @@
 .active {
     color: #f68301;
 }
+
+.disabled {
+    text-decoration: line-through;
+    pointer-events: none;
+}

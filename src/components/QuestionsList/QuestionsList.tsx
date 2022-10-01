@@ -2,6 +2,7 @@ import React from 'react';
 import { useDeleteQuestionMutation, useFetchQuestionsQuery } from '../../features/api-questions-slice';
 import { MdDelete } from 'react-icons/md';
 import styles from './QuestionList.module.scss';
+import { Link } from 'react-router-dom';
 
 export const QuestionsList = () => {
     const { data, isError } = useFetchQuestionsQuery(undefined, { refetchOnMountOrArgChange: true });
@@ -48,7 +49,9 @@ export const QuestionsList = () => {
                         ))}
                     </tbody>
                 </table>
+                <Link className={styles.return} to={'/'}>Powrót na stronę główną</Link>
             </div>
+
         </>
     )
 }

@@ -6,13 +6,20 @@ interface Props {
     setRedirect: Dispatch<React.SetStateAction<boolean>>;
     message: string;
     questionIndex: number;
+    isHelper: boolean;
 }
 
-export const Modal = ({ setShow, setRedirect, message }: Props) => {
+export const Modal = ({ setShow, setRedirect, message, isHelper }: Props) => {
 
     const handleClick = () => {
-        setShow(false);
-        setRedirect(message !== 'Poprawna odpowiedź!');
+        if (!isHelper) {
+            setShow(false);
+            setRedirect(message !== 'Poprawna odpowiedź!');
+        }
+        else if (isHelper) {
+            setShow(false);
+        }
+
     }
 
     return (

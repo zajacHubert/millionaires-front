@@ -7,21 +7,9 @@ export const getAllQuestions = async () => {
     return res;
 }
 
-export const addQuestion = async (question: QuestionToAdd) => {
-    const res = await axios.post(baseUrl, question);
-    return res;
-}
-
-export const getOneQuestion = async (id: string) => {
-    const res = await axios.get(`${baseUrl}/${id}`);
-    return res;
-}
-
 export const deleteQuestion = async (id: string) => {
     await axios.delete(`${baseUrl}/${id}`);
 }
 
-export const editQuestion = async (id: string, question: Partial<Question>) => {
-    await axios.patch(`${baseUrl}/${id}`, question);
-}
+
 

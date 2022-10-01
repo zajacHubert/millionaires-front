@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import { useAddQuestionMutation } from '../../features/api-questions-slice';
 import { DifficultyLevel } from '../../types/question';
+import styles from './QuestionForm.module.scss';
 
 type Inputs = {
     txt: string,
@@ -37,9 +39,12 @@ export const QuestionForm = () => {
     console.log(errors);
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(handleFormSubmit)}>
-                <textarea  {...register('txt', {
+        <div className={styles.container}>
+            <h2 className={styles.title}>Dodaj nowe pytanie</h2>
+            <form className={styles.form} onSubmit={handleSubmit(handleFormSubmit)}>
+
+                <label htmlFor="txt">Treść pytania</label>
+                <textarea id="txt"  {...register('txt', {
                     required: 'To pole jest wymagane',
                     minLength: {
                         value: 5,
@@ -51,7 +56,9 @@ export const QuestionForm = () => {
                     }
                 })} />
                 {errors.txt && <p>{errors.txt.message}</p>}
-                <input type="text"  {...register('ansA', {
+
+                <label htmlFor="ansA">Odpowiedź A</label>
+                <input id="ansA" type="text"  {...register('ansA', {
                     required: 'To pole jest wymagane',
                     maxLength: {
                         value: 30,
@@ -60,7 +67,8 @@ export const QuestionForm = () => {
                 })} />
                 {errors.ansA && <p>{errors.ansA.message}</p>}
 
-                <input type="text"  {...register('ansB', {
+                <label htmlFor="ansB">Odpowiedź B</label>
+                <input id="ansB" type="text"  {...register('ansB', {
                     required: 'To pole jest wymagane',
                     maxLength: {
                         value: 30,
@@ -69,7 +77,8 @@ export const QuestionForm = () => {
                 })} />
                 {errors.ansB && <p>{errors.ansB.message}</p>}
 
-                <input type="text"  {...register('ansC', {
+                <label htmlFor="ansC">Odpowiedź C</label>
+                <input id="ansC" type="text"  {...register('ansC', {
                     required: 'To pole jest wymagane',
                     maxLength: {
                         value: 30,
@@ -78,7 +87,8 @@ export const QuestionForm = () => {
                 })} />
                 {errors.ansC && <p>{errors.ansC.message}</p>}
 
-                <input type="text"  {...register('ansD', {
+                <label htmlFor="ansD">Odpowiedź D</label>
+                <input id="ansD" type="text"  {...register('ansD', {
                     required: 'To pole jest wymagane',
                     maxLength: {
                         value: 30,
@@ -87,7 +97,8 @@ export const QuestionForm = () => {
                 })} />
                 {errors.ansD && <p>{errors.ansD.message}</p>}
 
-                <input type="text"  {...register('correctAns', {
+                <label htmlFor="correctAns">Poprawna odpowiedź</label>
+                <input id="correctAns" type="text"  {...register('correctAns', {
                     required: 'To pole jest wymagane',
                     maxLength: {
                         value: 30,
@@ -96,7 +107,8 @@ export const QuestionForm = () => {
                 })} />
                 {errors.correctAns && <p>{errors.correctAns.message}</p>}
 
-                <select {...register('difficultyLevel')}>
+                <label htmlFor="difficultyLevel">Poziom trudności</label>
+                <select id="difficultyLevel" {...register('difficultyLevel')}>
                     <option value={DifficultyLevel.EASY}>Łatwe</option>
                     <option value={DifficultyLevel.MEDIUM}>Średnie</option>
                     <option value={DifficultyLevel.HARD}>Trudne</option>
@@ -104,6 +116,7 @@ export const QuestionForm = () => {
                 <input type="submit" />
 
             </form>
+            <Link className={styles.return} to={'/'}>Powrót na stronę główną</Link>
         </div>
     )
 }
