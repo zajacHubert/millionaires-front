@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Question, QuestionToAdd } from "../types/question";
 
-const baseUrlForApp = 'http://localhost:3001';
+const isDev = process.env.NODE_ENV === 'development';
+const baseUrlForApp = isDev ? 'http://localhost:3001' : 'https://millionaires-hubert.herokuapp.com/';
 
 export const apiSlice = createApi({
     reducerPath: 'api',
