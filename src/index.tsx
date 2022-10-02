@@ -6,7 +6,6 @@ import { App } from './App';
 import { apiSlice } from './features/api-questions-slice';
 import './global.scss';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

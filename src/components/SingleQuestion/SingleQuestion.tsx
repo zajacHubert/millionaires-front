@@ -9,6 +9,7 @@ import { winnings } from '../../utils/winnings';
 import { Modal } from '../Modal/Modal';
 import styles from './SingleQuestion.module.scss';
 import { helpers } from '../../utils/helpers';
+import { Spinner } from '../Spinner/Spinner';
 
 export const SingleQuestion = () => {
     const [drawed, setDrawed] = useState<Question[] | null>(null);
@@ -22,7 +23,7 @@ export const SingleQuestion = () => {
         half: false,
         crowd: false,
         phone: false,
-    })
+    });
 
     useEffect(() => {
         (async () => {
@@ -33,7 +34,7 @@ export const SingleQuestion = () => {
     }, []);
 
     if (!drawed) {
-        return <p>Loading</p>
+        return <Spinner />
     }
 
     const checkAnswer = (answer: string) => {
@@ -48,7 +49,6 @@ export const SingleQuestion = () => {
                 setShow(true);
             }
         } else {
-
             if (questionIndex < 1) {
                 setMessage('Niestety niepoprawna odpowiedź, nie udało się nic wygrać');
                 setShow(true);
@@ -89,8 +89,6 @@ export const SingleQuestion = () => {
             if (typeof answersToRemove === 'object') {
                 setRejected(answersToRemove);
             }
-            // setRejected(answersToRemove);
-            console.log(answersToRemove);
         }
         if (type === 'crowd') {
             setUsedHelpers(prev => ({
@@ -98,9 +96,22 @@ export const SingleQuestion = () => {
                 crowd: true,
             }));
             const messageToSet = helpers(type, drawed[questionIndex]);
-            setMessage('Odrzucono dwie błędne odpowiedzi');
+            if (typeof messageToSet === 'string') {
+                setMessage(messageToSet);
+            }
             setShow(true);
+        }
 
+        if (type === 'phone') {
+            setUsedHelpers(prev => ({
+                ...prev,
+                phone: true,
+            }));
+            const messageToSet = helpers(type, drawed[questionIndex]);
+            if (typeof messageToSet === 'string') {
+                setMessage(messageToSet);
+            }
+            setShow(true);
         }
 
     }
@@ -180,7 +191,8 @@ export const SingleQuestion = () => {
                         <div className={styles.helpers}>
                             <BsFillPeopleFill
                                 onClick={() => handleHelper('crowd')}
-                                className={`${styles.crowd} ${usedHelpers.crowd ? styles.disabled : ''}`} />
+                                className={`${styles.crowd} ${usedHelpers.crowd ? styles.disabled : ''}`}
+                            />
 
                             <button
                                 onClick={() => handleHelper('half')}
@@ -189,7 +201,11 @@ export const SingleQuestion = () => {
                             >
                                 50:50
                             </button>
-                            <AiFillPhone onClick={() => handleHelper('phone')} className={styles.phone} />
+                            <AiFillPhone
+                                onClick={() => handleHelper('phone')}
+                                className={`${styles.phone} ${usedHelpers.phone ? styles.disabled : ''}`}
+
+                            />
                         </div>
 
                     </div>

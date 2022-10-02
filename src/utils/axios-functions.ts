@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Question, QuestionToAdd } from "../types/question";
 const baseUrl = 'http://localhost:3001/questions';
 
 export const getAllQuestions = async () => {
@@ -7,9 +6,7 @@ export const getAllQuestions = async () => {
     return res;
 }
 
-export const deleteQuestion = async (id: string) => {
-    await axios.delete(`${baseUrl}/${id}`);
-}
+
 
 
 

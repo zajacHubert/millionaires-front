@@ -16,7 +16,6 @@ export enum DifficultyLevel {
     MEDIUM = 'MEDIUM',
     HARD = 'HARD',
 }
-
 export interface UsedHelpers {
     half: boolean;
     crowd: boolean;

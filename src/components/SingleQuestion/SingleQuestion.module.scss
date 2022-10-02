@@ -4,7 +4,6 @@
     display: flex;
     min-height: 80vh;
     border-radius: 10px;
-
 }
 
 .questions {
@@ -22,7 +21,6 @@
     color: #bcbcbc;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-
 }
 
 .question {
@@ -89,7 +87,6 @@
         color: #efefef;
         border-color: white;
     }
-
 }
 
 .half {
@@ -107,7 +104,6 @@
         color: #efefef;
         border-color: white;
     }
-
 }
 
 .phone {
@@ -159,8 +155,6 @@
     ul {
         list-style: none;
 
-
-
         li {
             margin: 0.5rem;
 
@@ -170,9 +164,7 @@
             }
         }
     }
-
 }
-
 
 .amount {
     margin-left: 0.7rem;
@@ -189,6 +181,6 @@
 }
 
 .disabled {
-    text-decoration: line-through;
     pointer-events: none;
+    color: #5e5e5e;
 }

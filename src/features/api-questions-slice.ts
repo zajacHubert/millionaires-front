@@ -15,7 +15,6 @@ export const apiSlice = createApi({
                 query: () => '/questions',
                 providesTags: ['Question'],
             }),
-
             addQuestion: builder.mutation<{}, QuestionToAdd>({
                 query: (place) => ({
                     url: '/questions',

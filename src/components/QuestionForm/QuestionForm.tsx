@@ -36,8 +36,6 @@ export const QuestionForm = () => {
         reset();
     }
 
-    console.log(errors);
-
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Dodaj nowe pytanie</h2>

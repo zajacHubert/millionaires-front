@@ -5,7 +5,7 @@ import styles from './QuestionList.module.scss';
 import { Link } from 'react-router-dom';
 
 export const QuestionsList = () => {
-    const { data, isError } = useFetchQuestionsQuery(undefined, { refetchOnMountOrArgChange: true });
+    const { data } = useFetchQuestionsQuery(undefined, { refetchOnMountOrArgChange: true });
     const [deleteQuestion] = useDeleteQuestionMutation();
     const sorted = data?.slice().sort((a, b) => (
         a.difficultyLevel.localeCompare(b.difficultyLevel)
@@ -51,7 +51,6 @@ export const QuestionsList = () => {
                 </table>
                 <Link className={styles.return} to={'/'}>Powrót na stronę główną</Link>
             </div>
-
         </>
     )
 }
