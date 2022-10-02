@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/millionaires-front/static/css/main.37575bb1.css",
-    "main.js": "/millionaires-front/static/js/main.3fcb73c3.js",
+    "main.css": "/millionaires-front/static/css/main.157eda70.css",
+    "main.js": "/millionaires-front/static/js/main.1b8ba22c.js",
     "static/media/logo big.webp": "/millionaires-front/static/media/logo big.d2f7fbb3ab01f23ac7aa.webp",
     "index.html": "/millionaires-front/index.html",
-    "main.37575bb1.css.map": "/millionaires-front/static/css/main.37575bb1.css.map",
-    "main.3fcb73c3.js.map": "/millionaires-front/static/js/main.3fcb73c3.js.map"
+    "main.157eda70.css.map": "/millionaires-front/static/css/main.157eda70.css.map",
+    "main.1b8ba22c.js.map": "/millionaires-front/static/js/main.1b8ba22c.js.map"
   },
   "entrypoints": [
-    "static/css/main.37575bb1.css",
-    "static/js/main.3fcb73c3.js"
+    "static/css/main.157eda70.css",
+    "static/js/main.1b8ba22c.js"
   ]
 }
