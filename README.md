@@ -29,7 +29,6 @@ The logic of lifebuoys as in the program, the possibility of one-time use
 Different dialogs depending on the win, whether the user answered incorrectly, gave up or won the jackpot
 ![image](https://user-images.githubusercontent.com/94974541/204151431-41877889-e44b-4f49-ab4a-6ce561a34de9.png)
 ![image](https://user-images.githubusercontent.com/94974541/204151651-92a93522-847f-4ec8-8253-5e43d5149b9f.png)
-![image](https://user-images.githubusercontent.com/94974541/204151671-c17c5725-de5b-4df7-98d2-8e4ec4e40b01.png)
 
 Possibility to add, remove questions divided by the level of difficulty
 ![image](https://user-images.githubusercontent.com/94974541/204151697-2865f0de-0e0c-4eaf-9c62-df5c4e14541f.png)
