@@ -13,14 +13,14 @@ Technologies used:
 - react router
 - react hook form
 
-The application includes all the functionalities of the popular game show.  
+The application includes all the functionalities of the popular game show. Main view
 
 ![image](https://user-images.githubusercontent.com/94974541/193465633-a87ac62b-3698-4dc7-bbc5-70aa796bb1e1.png)
 
   
 ![image](https://user-images.githubusercontent.com/94974541/193465705-372729c8-37e4-4a8e-9c94-43f73f02b15a.png)
 
-Main view
+
 ![image](https://user-images.githubusercontent.com/94974541/204151268-0affb234-7023-43f5-8f12-045d19a47f69.png)
 ![image](https://user-images.githubusercontent.com/94974541/204151284-9e5613fb-fab0-45be-a143-0bd735b2f3ca.png)
 
