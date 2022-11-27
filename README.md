@@ -1,6 +1,3 @@
-LIVE https://zajachubert.github.io/millionaires-front/
-
-
 Available Scripts
 In the project directory, you can run:
 
