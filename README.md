@@ -23,7 +23,6 @@ Popup with info for user
 
 The logic of lifebuoys as in the program, the possibility of one-time use
 ![image](https://user-images.githubusercontent.com/94974541/204151284-9e5613fb-fab0-45be-a143-0bd735b2f3ca.png)
-![image](https://user-images.githubusercontent.com/94974541/204151306-a2dda87e-4871-4d31-959c-7025d1fe1efd.png)
 ![image](https://user-images.githubusercontent.com/94974541/204151340-e3ebc123-bf86-46b7-8bef-d89eefd71e91.png)
 ![image](https://user-images.githubusercontent.com/94974541/204151413-3da383f6-de0f-4936-bfe4-295c49312422.png)
 
